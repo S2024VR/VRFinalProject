@@ -8,7 +8,6 @@ public class ZombieDamageDealer : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Damage");
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
