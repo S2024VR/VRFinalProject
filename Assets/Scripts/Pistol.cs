@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.UI;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class Pistol : Weapon
 {
@@ -23,10 +24,30 @@ public class Pistol : Weapon
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))  // If 'R' key is pressed
+        // Check for 'R' key press on the keyboard
+        if (Input.GetKeyDown(KeyCode.R))
         {
+            Debug.Log("R key was pressed.");
             currentAmmo = maxAmmo;  // Reset ammo
             ammoDisplay.text = currentAmmo.ToString() + "/" + maxAmmo.ToString();  // Update ammoDisplay.text
+        }
+
+        // Check for primary button press on the Oculus Quest 2 controller
+        List<InputDevice> devices = new List<InputDevice>();
+        InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller, devices);
+
+        foreach (var device in devices)
+        {
+            if (device.isValid)
+            {
+                bool inputValue;
+                if (device.TryGetFeatureValue(CommonUsages.primaryButton, out inputValue) && inputValue)
+                {
+                    Debug.Log("Primary button was pressed.");
+                    currentAmmo = maxAmmo;  // Reset ammo
+                    ammoDisplay.text = currentAmmo.ToString() + "/" + maxAmmo.ToString();  // Update ammoDisplay.text
+                }
+            }
         }
     }
 
@@ -37,7 +58,7 @@ public class Pistol : Weapon
         {
             Shoot();
             audio.Play();
-            currentAmmo--;  // Decrease ammo count after shooting
+            currentAmmo--; // Decrease ammo count after shooting
             ammoDisplay.text = currentAmmo.ToString() + "/" + maxAmmo.ToString();  // Update ammoDisplay.text
         }
     }

@@ -15,12 +15,14 @@ public class Enemyfollow : MonoBehaviour, ITakeDamage
     private float maxHealth = 100f;
     public float health;
     private float DamageToPlayer;
-     public Slider HealthSlider;
+    public Slider HealthSlider;
+    public PlayerHealth playerHealth;
 
     // variable for bullet collision
     // Update is called once per frame
     void Start(){
         health = maxHealth;
+        playerHealth = GameObject.FindObjectOfType<PlayerHealth>();
     }
 
     void Update()
@@ -56,8 +58,8 @@ public class Enemyfollow : MonoBehaviour, ITakeDamage
             animator.SetBool("isRunning", true);
             animator.SetBool("isAttacking", false);
             //moves the zombie towards the user
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-            // transform.position = new Vector3(transform.position.x, Terrain.activeTerrain.SampleHeight(transform.position), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);   
+
         }
     }
 
@@ -70,6 +72,7 @@ public class Enemyfollow : MonoBehaviour, ITakeDamage
 
     private void Die()
     {
+        playerHealth.UpdateScore(playerHealth.score += 1); // Update the score
         Destroy(gameObject); // Remove the zombie from the scene
     }
 }

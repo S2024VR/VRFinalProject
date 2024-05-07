@@ -10,9 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public int maxxPos;
     public int minzPos;
     public int maxzPos;
-    public int maxEnemies;
-
-    private int EnemyCount = 0;
+    public int EnemyCount;
 
     private void Start()
     {
@@ -21,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
-        while (EnemyCount < maxEnemies)
+        while (EnemyCount < 10)
         {
             // Randomize spawn position
             float xPos = Random.Range(minxPos, maxxPos) + transform.position.x;
