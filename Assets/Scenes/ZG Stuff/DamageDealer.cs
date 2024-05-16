@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieDamageDealer : MonoBehaviour
+public class DamageDealer : MonoBehaviour
 {
     public int damage = 20;
 
@@ -10,7 +10,7 @@ public class ZombieDamageDealer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = collision.gameObject.GetComponentInChildren<PlayerHealth>();
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
 
             if (playerHealth != null)
             {

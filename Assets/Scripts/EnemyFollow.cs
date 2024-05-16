@@ -16,6 +16,7 @@ public class Enemyfollow : MonoBehaviour, ITakeDamage
     public float health;
     private float DamageToPlayer;
      public Slider HealthSlider;
+     public GameObject supplyDrop;
 
     // variable for bullet collision
     // Update is called once per frame
@@ -69,7 +70,7 @@ public class Enemyfollow : MonoBehaviour, ITakeDamage
     }
 
     private void Die()
-    {
+    {  
         Destroy(gameObject); // Remove the zombie from the scene
     }
 }
