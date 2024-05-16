@@ -73,7 +73,8 @@ public class GameStartMenu : MonoBehaviour
         {
             HideAll();
             // Load the scene corresponding to the selected level
-            SceneTransitionManager.singleton.GoToSceneAsync(GetSceneIndex(selectedLevelName));
+            Debug.Log(GetSceneIndex(selectedLevelName.Trim()));
+            SceneTransitionManager.singleton.GoToSceneAsync(GetSceneIndex(selectedLevelName.Trim()));
         }
     }
 
