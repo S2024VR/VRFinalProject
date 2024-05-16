@@ -5,12 +5,36 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 55daccc09a3b69647bbab145b54a3ab3
   - enabled: 1
-    path: Assets/Scenes/Anthony.unity
+    path: Assets/Scenes/1 Start Scene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Desert.unity
+    guid: 754cf650d137ad642846a523a7d45782
+  - enabled: 1
+    path: Assets/Scenes/Trench.unity
+    guid: 9cd01a8892d380242bce2ba333dcc6c8
+  - enabled: 1
+    path: Assets/Scenes/Mountain.unity
+    guid: a4e6aabfd2cc16e4980b5ffb25a239c9
+  - enabled: 1
+    path: Assets/Scenes/Bunker.unity
+    guid: bd1ed8a3884ef4a4ea9e29712817d247
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: 2369f2741becc99409e5267258753a41
+  - enabled: 0
+    path: Assets/Scenes/Bunker (1).unity
+    guid: b12cb41a7b3351b418607fc034ce941e
+  - enabled: 0
+    path: Assets/Scenes/Desert (1).unity
     guid: 8f27ff3b47ec87745819b240a2aefebc
+  - enabled: 0
+    path: Assets/Scenes/Mountain (1).unity
+    guid: 14dc59b0caec28f43b918238de10bbb2
+  - enabled: 0
+    path: Assets/Scenes/Forest (1).unity
+    guid: cf85efbc7d495224198de739b5574e55
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
